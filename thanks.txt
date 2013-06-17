@@ -1,3 +1,5 @@
 Many Thanks:
     Gem Creation Help: http://net.tutsplus.com/tutorials/ruby/gem-creation-with-bundler/
-    Akamai Samples: http://esi-examples.akamai.com/
+    Akamai
+        Samples: http://esi-examples.akamai.com/
+        Pragma Headers: http://mesmor.com/2012/03/18/akamai-pragma-debug-headers/

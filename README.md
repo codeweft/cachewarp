@@ -1,24 +1,30 @@
 # CacheWarp
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'cachewarp'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install cachewarp
+Gem targeted towards providing a solution to verify cache headers for content delivery services like Akamai
 
 ## Usage
 
-TODO: Write usage instructions here
+    require 'cachewarp'                                 #Require CacheWarp in your file
+    request = CacheWarp.new('http://www.akamai.com/')   #Initialize Request Object
+    request.fetch                                       #Fetch Request
+    request.response_headers                            #Get Response Headers
+    request.is_cached?                                  #Verify 'TCP HIT' i.e if Akamai is caching the request
+
+## Installation
+
+Using Bundler
+
+    gem 'cachewarp' #Add to Gemfile
+    $ bundle        #Install Gem
+
+Using gem command
+
+    $ gem install cachewarp
+
+#Change Log:
+
+0.0.1
+    Provision to verify TCP HIT in Akamai cache
 
 ## Contributing
 
