@@ -5,7 +5,7 @@ require 'cachewarp/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "cachewarp"
-  spec.version       = CacheWarp::VERSION
+  spec.version       = GEM_VERSION
   spec.authors       = ["codeweft"]
   spec.email         = ["codeweft@gmail.com"]
   spec.description   = %q{Gem to verify cache and content delivery headers}

@@ -1,3 +1,1 @@
-module CacheWarp
-  VERSION = "0.0.0"
-end
+GEM_VERSION = "0.0.0"
