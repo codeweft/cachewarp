@@ -1,0 +1,2 @@
+Many Thanks:
+    Gem Creation Help: http://net.tutsplus.com/tutorials/ruby/gem-creation-with-bundler/
