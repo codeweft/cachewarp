@@ -4,6 +4,8 @@ Gem targeted towards providing a solution to verify cache headers for content de
 
 [@juteroot](http://www.juteroot.com/) [@bitweft](http://www.bitweft.com/) [@codeweft](http://www.codeweft.com/)
 
+[![Dependency Status](https://gemnasium.com/juteroot/cachewarp.png)](https://gemnasium.com/juteroot/cachewarp) [![Code Climate](https://codeclimate.com/github/juteroot/cachewarp.png)](https://codeclimate.com/github/juteroot/cachewarp)
+
 ##Usage
 
 ###Using Ruby Code
