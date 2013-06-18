@@ -1,10 +1,12 @@
 #[CacheWarp](http://www.juteroot.com/)
 
-Gem targeted towards providing a solution to verify cache headers for content delivery services like Akamai
+Gem targeted towards providing a solution to verify cache headers for content delivery services like Akamai by:
 
-## Usage
+[@juteroot](http://www.juteroot.com/) [@bitweft](http://www.bitweft.com/) [@codeweft](http://www.codeweft.com/)
 
-### Using Ruby Code
+##Usage
+
+###Using Ruby Code
 
 Using CacheWarp object:
 
@@ -32,7 +34,7 @@ One Liner:
     CacheWarp.new("http://www.google.com/").is_cached?  
 ```
 
-### Console/CommandLine/Terminal/System Command
+###Console/CommandLine/Terminal/System Command
 
 ```
 # Following is an example of non zero exit code. Run the following command on terminal
@@ -43,7 +45,7 @@ One Liner:
 
 
 
-## Installation
+##Installation
 
 Using Bundler
 
@@ -70,7 +72,7 @@ Using gem command
 
     * Provision to verify TCP HIT in Akamai cache
 
-## Contributing
+##Contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
@@ -78,8 +80,7 @@ Using gem command
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-## Contributors
+##Community
 
-[@juteroot](http://www.juteroot.com/)
-[@bitweft](http://www.bitweft.com/)
-[@codeweft](http://www.codeweft.com/)
+* [CacheWarp on RubyGems](https://rubygems.org/gems/cachewarp)
+* [CacheWarp on RubyDoc](http://rubydoc.info/gems/cachewarp)
