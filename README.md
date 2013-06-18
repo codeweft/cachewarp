@@ -25,7 +25,7 @@ Using CacheWarp object
     request.is_cached?    
 ```
 
-One Liner: Returns 'false' since Google does not cache using Akamai
+One Liner: Returns 'false' since Google does not cache using Akamai CDN
 
 ```
     CacheWarp.new("http://www.google.com/").is_cached?  
