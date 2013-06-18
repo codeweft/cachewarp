@@ -6,49 +6,52 @@ Gem targeted towards providing a solution to verify cache headers for content de
 
 ### Using Ruby Code
 
-Using CacheWarp object
+Using CacheWarp object:
 
 ```
-    #Require CacheWarp in your file
+# Require CacheWarp in your file
     require 'cachewarp'
 
-    #Initialize Request Object
+# Initialize Request Object
     request = CacheWarp.new('http://www.akamai.com/')
 
-    #Fetch Request
+# Fetch Request
     request.fetch
 
-    #Get Response Headers
+# Get Response Headers
     request.response_headers
 
-    #Verify 'TCP HIT' i.e if Akamai is caching the request
+# Verify 'TCP HIT' i.e if Akamai is caching the request
     request.is_cached?    
 ```
 
-One Liner: Returns 'false' since Google does not cache using Akamai CDN
+One Liner:
 
 ```
+# Returns 'false' since Google does not cache using Akamai CDN
     CacheWarp.new("http://www.google.com/").is_cached?  
 ```
 
 ### Console/CommandLine/Terminal/System Command
 
-Following is an example of non zero exit code. Run the following command on terminal
-
 ```
+# Following is an example of non zero exit code. Run the following command on terminal
+# Useful to verify caching post deployment using CI tools like Jenkins and GO
     $ ruby -e 'require "cachewarp"; exit -1 unless CacheWarp.new("http://www.google.com/").is_cached?'
     $ echo $?   
 ```
 
-Useful to verify caching post deployment using CI tools like Jenkins and GO
+
 
 ## Installation
 
 Using Bundler
 
 ```
-    gem 'cachewarp' #Add to Gemfile
-    $ bundle        #Install Gem
+# Add to Gemfile
+    gem "cachewarp", "~> 0.0.2" 
+# Install Gem
+    $ bundle
 ```
 
 Using gem command
