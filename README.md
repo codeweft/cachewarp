@@ -29,8 +29,13 @@ Using gem command
 
 ##Change Log:
 
+0.0.2
+
+    * Now you can directly do CacheWarp.new('http://www.akamai.com/').is_cached?
+
 0.0.1
-    Provision to verify TCP HIT in Akamai cache
+
+    * Provision to verify TCP HIT in Akamai cache
 
 ## Contributing
 
