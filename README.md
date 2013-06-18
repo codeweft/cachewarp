@@ -14,12 +14,14 @@ Using CacheWarp object
     request.fetch                                       #Fetch Request
     request.response_headers                            #Get Response Headers
     request.is_cached?                                  #Verify 'TCP HIT' i.e if Akamai is caching the request
+    
 ```
 
 One Liner
 
 ```
     CacheWarp.new("http://www.google.com/").is_cached?  #Returns 'false' since Google does not cache using Akamai
+    
 ```
 
 ### Console/CommandLine/Terminal/System Command
@@ -29,6 +31,7 @@ Following is an example of non zero exit code. Run the following command on term
 ```
     $ ruby -e 'require "cachewarp"; exit -1 unless CacheWarp.new("http://www.google.com/").is_cached?'
     $ echo $?
+    
 ```
 
 ## Installation
@@ -38,12 +41,14 @@ Using Bundler
 ```
     gem 'cachewarp' #Add to Gemfile
     $ bundle        #Install Gem
+    
 ```
 
 Using gem command
 
 ```
     $ gem install cachewarp
+    
 ```
 
 ##Change Log:
