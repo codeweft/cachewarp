@@ -32,8 +32,9 @@ class CacheWarp < WebService
   end
 
   def is_cached?
-    @response_headers.each do |attr, value|
-      @failures[attr] = "Expected= #{@expected_response_headers[attr]}, Actual= #{value}" unless  @expected_response_headers[attr].nil? || value.match(@expected_response_headers[attr])
+    fetch if response_headers.empty?
+    @expected_response_headers.each do |attr, value|
+      @failures[attr] = {expected: value, actual: @response_headers[attr]} unless @response_headers[attr] && @response_headers[attr].match(value.to_s)
     end
     return ((@failures.empty?) ? true : false)
   end

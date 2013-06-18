@@ -12,7 +12,7 @@ class WebService
       end
       http.start { |htttp| htttp.request(request) }
     rescue Exception => ex
-      raise "Unable to fetch #{@uri.request_uri}. Check if site is up and running"
+      raise "Unable to fetch request. Check if site is up and running"
     end
   end
 
