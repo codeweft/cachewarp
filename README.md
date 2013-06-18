@@ -1,4 +1,4 @@
-#[CacheWarp](https://github.com/juteroot/cachewarp)
+#[CacheWarp](http://www.juteroot.com/)
 
 Gem targeted towards providing a solution to verify cache headers for content delivery services like Akamai
 
