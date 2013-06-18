@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = GEM_VERSION
   spec.authors       = ["codeweft", "bitweft", "juteroot"]
   spec.email         = ["juteroot@gmail.com"]
-  spec.description   = %q{Gem to verify cache and content delivery headers}
-  spec.summary       = %q{Gem to verify cache and content delivery headers}
+  spec.description   = %q{Verify cache and content delivery headers}
+  spec.summary       = %q{Ruby Gem targeted towards providing a solution to verify cache headers for content delivery services like Akamai}
   spec.homepage      = "http://www.juteroot.com"
   spec.license       = "To be decided"
 
