@@ -1,10 +1,8 @@
-#[CacheWarp](http://www.juteroot.com/) [![Build Status](https://drone.io/github.com/juteroot/cachewarp/status.png)](https://drone.io/github.com/juteroot/cachewarp/latest)
+#[CacheWarp](http://www.juteroot.com/)
 
 Gem targeted towards providing a solution to verify cache headers for content delivery services like Akamai by:
 
 [@juteroot](http://www.juteroot.com/) [@bitweft](http://www.bitweft.com/) [@codeweft](http://www.codeweft.com/)
-
-[![Dependency Status](https://gemnasium.com/juteroot/cachewarp.png)](https://gemnasium.com/juteroot/cachewarp) [![Code Climate](https://codeclimate.com/github/juteroot/cachewarp.png)](https://codeclimate.com/github/juteroot/cachewarp)
 
 ##Usage
 
@@ -86,3 +84,11 @@ Using gem command
 
 * [CacheWarp on RubyGems](https://rubygems.org/gems/cachewarp)
 * [CacheWarp on RubyDoc](http://rubydoc.info/gems/cachewarp)
+
+##Build Status:
+
+[![Dependency Status](https://gemnasium.com/juteroot/cachewarp.png)](https://gemnasium.com/juteroot/cachewarp)
+[![Code Climate](https://codeclimate.com/github/juteroot/cachewarp.png)](https://codeclimate.com/github/juteroot/cachewarp)
+[![Build Status](https://drone.io/github.com/juteroot/cachewarp/status.png)](https://drone.io/github.com/juteroot/cachewarp/latest)
+[![Codeship Status for juteroot/cachewarp](https://www.codeship.io/projects/bbb2cd50-ba46-0130-e2db-6abb3b84c73c/status?branch=master)](https://www.codeship.io/projects/4384)
+
