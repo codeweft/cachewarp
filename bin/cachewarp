@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 begin
   require 'cachewarp'
 rescue LoadError
