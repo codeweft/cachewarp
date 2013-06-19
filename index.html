@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>CacheWarp by juteroot</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/juteroot/cachewarp">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>CacheWarp</h1>
+            <h2>Ruby Gem to verify cache and content delivery headers </h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/juteroot/cachewarp/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/juteroot/cachewarp/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a name="cachewarp" class="anchor" href="#cachewarp"><span class="octicon octicon-link"></span></a><a href="http://www.juteroot.com/">CacheWarp</a>
+</h1>
+
+<p>Gem targeted towards providing a solution to verify cache headers for content delivery services like Akamai by:</p>
+
+<p><a href="http://www.juteroot.com/">@juteroot</a> <a href="http://www.bitweft.com/">@bitweft</a> <a href="http://www.codeweft.com/">@codeweft</a></p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a name="using-ruby-code" class="anchor" href="#using-ruby-code"><span class="octicon octicon-link"></span></a>Using Ruby Code</h3>
+
+<p>Using CacheWarp object:</p>
+
+<pre><code># Require CacheWarp in your file
+    require 'cachewarp'
+
+# Initialize Request Object
+    request = CacheWarp.new('http://www.akamai.com/')
+
+# Fetch Request
+    request.fetch
+
+# Get Response Headers
+    request.response_headers
+
+# Verify 'TCP HIT' i.e if Akamai is caching the request
+    request.is_cached?    
+</code></pre>
+
+<p>One Liner:</p>
+
+<pre><code># Returns 'false' since Google does not cache using Akamai CDN
+    CacheWarp.new("http://www.google.com/").is_cached?  
+</code></pre>
+
+<h3>
+<a name="consolecommandlineterminalsystem-command" class="anchor" href="#consolecommandlineterminalsystem-command"><span class="octicon octicon-link"></span></a>Console/CommandLine/Terminal/System Command</h3>
+
+<pre><code># Following is an example of non zero exit code. Run the following command on terminal
+# Useful to verify caching post deployment using CI tools like Jenkins and GO
+    $ ruby -e 'require "cachewarp"; exit -1 unless CacheWarp.new("http://www.google.com/").is_cached?'
+    $ echo $?   
+</code></pre>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Using Bundler</p>
+
+<pre><code># Add to Gemfile
+    gem "cachewarp", "~&gt; 0.0.2" 
+# Install Gem
+    $ bundle
+</code></pre>
+
+<p>Using gem command</p>
+
+<pre><code>    $ gem install cachewarp
+</code></pre>
+
+<h2>
+<a name="change-log" class="anchor" href="#change-log"><span class="octicon octicon-link"></span></a>Change Log:</h2>
+
+<p>0.0.2</p>
+
+<pre><code>* Now you can directly perform 'CacheWarp.new('http://www.akamai.com/').is_cached?'
+</code></pre>
+
+<p>0.0.1</p>
+
+<pre><code>* Provision to verify TCP HIT in Akamai cache
+</code></pre>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol><h2>
+<a name="community" class="anchor" href="#community"><span class="octicon octicon-link"></span></a>Community</h2>
+
+<ul>
+<li><a href="https://rubygems.org/gems/cachewarp">CacheWarp on RubyGems</a></li>
+<li><a href="http://rubydoc.info/gems/cachewarp">CacheWarp on RubyDoc</a></li>
+</ul><h2>
+<a name="build-status" class="anchor" href="#build-status"><span class="octicon octicon-link"></span></a>Build Status:</h2>
+
+<p><a href="https://gemnasium.com/juteroot/cachewarp"><img src="https://gemnasium.com/juteroot/cachewarp.png" alt="Dependency Status"></a>
+<a href="https://codeclimate.com/github/juteroot/cachewarp"><img src="https://codeclimate.com/github/juteroot/cachewarp.png" alt="Code Climate"></a>
+<a href="https://drone.io/github.com/juteroot/cachewarp/latest"><img src="https://drone.io/github.com/juteroot/cachewarp/status.png" alt="Build Status"></a>
+<a href="https://www.codeship.io/projects/4384"><img src="https://www.codeship.io/projects/bbb2cd50-ba46-0130-e2db-6abb3b84c73c/status?branch=master" alt="Codeship Status for juteroot/cachewarp"></a></p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/juteroot">juteroot</a> can be found on <a href="https://github.com/juteroot/cachewarp">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-41788905-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
