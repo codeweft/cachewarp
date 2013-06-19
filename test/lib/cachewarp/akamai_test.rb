@@ -33,4 +33,10 @@ describe CacheWarp do
     end
     assert(request.response_headers.empty?)
   end
+
+  it "akamai caching for invalid site using commandline executable" do
+    uri = 'http://www.google.com/'
+    command = "cd bin && ruby cachewarp.rb #{uri}"
+    assert(!system(command))
+  end
 end

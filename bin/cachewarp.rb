@@ -1,0 +1,12 @@
+begin
+  require 'cachewarp'
+rescue LoadError
+end
+
+if ARGV.empty? || (['-h', '--help', '?'].include? ARGV[0])
+  puts "Usage   : cachewarp <name of site ending with />" +
+           "\nExample : cachewarp http://www.google.com/ #==> Prints 'Not Cached'"
+  exit(0)
+end
+
+CacheWarp.new(ARGV[0]).is_cached? ? (puts "Cached"; exit(-1)) : (puts "Not Cached"; exit(-1))
