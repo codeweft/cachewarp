@@ -35,8 +35,8 @@ describe CacheWarp do
   end
 
   it "akamai caching for invalid site using commandline executable" do
-    uri = 'http://www.google.com/'
-    command = "cd bin && ruby cachewarp.rb #{uri}"
-    assert(!system(command))
+    uri = 'http://www.akamai.com/'
+    command = "cd bin && ruby cachewarp #{uri}"
+    assert(system(command), "Command returned failure: #{command}")
   end
 end
