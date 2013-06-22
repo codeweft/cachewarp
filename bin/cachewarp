@@ -7,7 +7,7 @@ end
 
 if ARGV.empty? || (['-h', '--help', '?'].include? ARGV[0])
   puts "Usage   : cachewarp <name of site ending with />" +
-           "\nExample :  cachewarp http://www.google.com/ #==> Prints 'Not Cached'"
+     "\nExample : cachewarp http://www.google.com/ #==> Prints 'Not Cached'"
   exit(0)
 end
 
