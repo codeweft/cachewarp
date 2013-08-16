@@ -1,4 +1,4 @@
-require_relative '../../test_helper'
+require_relative '../../spec_helper'
 
 describe CacheWarp, "when a site is checked for Akamai caching" do
   it "should be cached with akamai cache headers" do

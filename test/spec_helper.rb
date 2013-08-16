@@ -1,4 +1,4 @@
 require 'minitest/autorun'
-require 'minitest/pride'
+require 'minitest/given'
 require File.expand_path('../../lib/cachewarp.rb', __FILE__)
 require 'pp'
