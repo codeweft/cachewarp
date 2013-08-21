@@ -1,8 +1,9 @@
 require_relative 'cachewarp/version'
 require_relative 'cachewarp/web_service'
 
-class CacheWarp < WebService
+class CacheWarp
   attr_reader :uri, :response_headers, :headers, :failures
+  include WebService
 
   def initialize uri=nil
     @uri = uri

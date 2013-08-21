@@ -1,6 +1,6 @@
 require 'net/http'
 
-class WebService
+module WebService
   attr_accessor :headers,:uri
 
   def service_request(host, port, request, use_ssl=false)
