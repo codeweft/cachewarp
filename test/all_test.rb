@@ -1,4 +1,13 @@
-require_relative '../../spec_helper'
+require 'minitest/autorun'
+require 'minitest/given'
+require File.expand_path('../../lib/cachewarp.rb', __FILE__)
+require 'pp'
+
+describe CacheWarp do
+  it "must be defined" do
+    GEM_VERSION.wont_be_nil
+  end
+end
 
 describe CacheWarp, "when a site is checked for Akamai caching" do
   it "should be cached with akamai cache headers" do
