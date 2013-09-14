@@ -11,8 +11,9 @@ require 'cachewarp/version'
 
 
 def parse_arguments(arguments)
-  opts = OptionParser.new do |opt|
-   opt.banner = "Usage: cachewarp webpage\n" \
+  options = {}
+  OptionParser.new do |opt|
+   opt.banner = "Usage: cachewarp webpage [options]\n" \
                 "Example: cachewarp http://www.google.com/"
 
    opt.on_tail("-h", "--help", "Show this message") do
@@ -24,18 +25,31 @@ def parse_arguments(arguments)
      puts GEM_VERSION
      exit
    end
-  end
-  opts.parse!(arguments)
+
+   opt.on_tail("-q", "--quiet", "Supress output") do |q|
+    options[:quiet] = q
+   end
+  end.parse!(arguments)
+
   if arguments.first && arguments.first[0] != '-'
-    arguments.first
+    options[:uri] = arguments.first
   else
     puts opts
     abort
   end
+  options
 rescue OptionParser::InvalidOption
   puts opts
 end
 
-web_page = parse_arguments(ARGV)
+options = parse_arguments(ARGV)
 
-CacheWarp.new(web_page).is_cached? ? (puts "Cached"; exit(0)) : (puts "Not Cached"; exit(-1))
+cache_warp = CacheWarp.new(options[:uri])
+
+if cache_warp.is_cached?
+  puts "Cached" unless options[:quiet]
+  exit
+else
+  puts "Not Cached" unless options[:quiet]
+  abort
+end
