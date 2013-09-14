@@ -1,5 +1,5 @@
-require_relative 'cachewarp/version'
-require_relative 'cachewarp/web_service'
+require 'cachewarp/version'
+require 'cachewarp/web_service'
 
 class CacheWarp
   attr_reader :uri, :response_headers, :failures

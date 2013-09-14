@@ -1,7 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/given'
-require File.expand_path('../../lib/cachewarp.rb', __FILE__)
-
+require 'test_helper'
 
 describe "Gem Version" do
   context "must be defined" do
