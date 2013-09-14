@@ -1,14 +1,41 @@
 #!/usr/bin/env ruby
+require 'pathname'
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path("../../Gemfile",
+  Pathname.new(__FILE__).realpath)
 
-begin
-  require 'cachewarp'
-rescue LoadError
+require 'bundler/setup'
+require 'optparse'
+require 'uri'
+require 'cachewarp'
+require 'cachewarp/version'
+
+
+def parse_arguments(arguments)
+  opts = OptionParser.new do |opt|
+   opt.banner = "Usage: cachewarp webpage\n" \
+                "Example: cachewarp http://www.google.com/"
+
+   opt.on_tail("-h", "--help", "Show this message") do
+     puts opt
+     abort
+   end
+
+   opt.on_tail("-v", "--version", "Show version") do
+     puts GEM_VERSION
+     exit
+   end
+  end
+  opts.parse!(arguments)
+  if arguments.first && arguments.first[0] != '-'
+    arguments.first
+  else
+    puts opts
+    abort
+  end
+rescue OptionParser::InvalidOption
+  puts opts
 end
 
-if ARGV.empty? || (['-h', '--help', '?'].include? ARGV[0])
-  puts "Usage   : cachewarp <name of site ending with />" +
-     "\nExample : cachewarp http://www.google.com/ #==> Prints 'Not Cached'"
-  exit(0)
-end
+web_page = parse_arguments(ARGV)
 
-CacheWarp.new(ARGV[0]).is_cached? ? (puts "Cached"; exit(0)) : (puts "Not Cached"; exit(-1))
+CacheWarp.new(web_page).is_cached? ? (puts "Cached"; exit(0)) : (puts "Not Cached"; exit(-1))
