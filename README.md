@@ -39,8 +39,7 @@ One Liner:
 ```
 # Following is an example of non zero exit code. Run the following command on terminal
 # Useful to verify caching post deployment using CI tools like Jenkins and GO
-    $ ruby -e 'require "cachewarp"; exit -1 unless CacheWarp.new("http://www.google.com/").is_cached?'
-    $ echo $?   
+    $ cachewarp http://www.google.com/ --quiet
 ```
 
 
