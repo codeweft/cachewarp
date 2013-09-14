@@ -12,7 +12,7 @@ require 'cachewarp/version'
 
 def parse_arguments(arguments)
   options = {}
-  OptionParser.new do |opt|
+  opt_parser = OptionParser.new do |opt|
    opt.banner = "Usage: cachewarp webpage [options]\n" \
                 "Example: cachewarp http://www.google.com/"
 
@@ -29,12 +29,12 @@ def parse_arguments(arguments)
    opt.on_tail("-q", "--quiet", "Supress output") do |q|
     options[:quiet] = q
    end
-  end.parse!(arguments)
-
+  end
+  opt_parser.parse!(arguments)
   if arguments.first && arguments.first[0] != '-'
     options[:uri] = arguments.first
   else
-    puts opts
+    puts opt_parser
     abort
   end
   options
