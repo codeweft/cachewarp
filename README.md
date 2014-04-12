@@ -1,8 +1,8 @@
-#[CacheWarp](http://www.juteroot.com/)
+#[CacheWarp](http://www.cachewarp.com/)
 
 Gem targeted towards providing a solution to verify cache headers for content delivery services like Akamai by:
 
-[@juteroot](http://www.juteroot.com/) [@bitweft](http://www.bitweft.com/) [@codeweft](http://www.codeweft.com/)
+[@bitweft](http://www.bitweft.com/) [@codeweft](http://www.codeweft.com/)
 
 ##Usage
 
