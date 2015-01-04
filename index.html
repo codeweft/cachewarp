@@ -31,18 +31,18 @@
       </header>
       <section>
         <h1>
-<a name="cachewarp" class="anchor" href="#cachewarp"><span class="octicon octicon-link"></span></a><a href="http://www.juteroot.com/">CacheWarp</a>
+<a id="cachewarp" class="anchor" href="#cachewarp" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="http://www.cachewarp.com/">CacheWarp</a>
 </h1>
 
 <p>Gem targeted towards providing a solution to verify cache headers for content delivery services like Akamai by:</p>
 
-<p><a href="http://www.juteroot.com/">@juteroot</a> <a href="http://www.bitweft.com/">@bitweft</a> <a href="http://www.codeweft.com/">@codeweft</a></p>
+<p><a href="http://www.bitweft.com/">@bitweft</a> <a href="http://www.codeweft.com/">@codeweft</a></p>
 
 <h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <h3>
-<a name="using-ruby-code" class="anchor" href="#using-ruby-code"><span class="octicon octicon-link"></span></a>Using Ruby Code</h3>
+<a id="using-ruby-code" class="anchor" href="#using-ruby-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Ruby Code</h3>
 
 <p>Using CacheWarp object:</p>
 
@@ -69,16 +69,15 @@
 </code></pre>
 
 <h3>
-<a name="consolecommandlineterminalsystem-command" class="anchor" href="#consolecommandlineterminalsystem-command"><span class="octicon octicon-link"></span></a>Console/CommandLine/Terminal/System Command</h3>
+<a id="consolecommandlineterminalsystem-command" class="anchor" href="#consolecommandlineterminalsystem-command" aria-hidden="true"><span class="octicon octicon-link"></span></a>Console/CommandLine/Terminal/System Command</h3>
 
 <pre><code># Following is an example of non zero exit code. Run the following command on terminal
 # Useful to verify caching post deployment using CI tools like Jenkins and GO
-    $ ruby -e 'require "cachewarp"; exit -1 unless CacheWarp.new("http://www.google.com/").is_cached?'
-    $ echo $?   
+    $ cachewarp http://www.google.com/ --quiet
 </code></pre>
 
 <h2>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>Using Bundler</p>
 
@@ -94,7 +93,7 @@
 </code></pre>
 
 <h2>
-<a name="change-log" class="anchor" href="#change-log"><span class="octicon octicon-link"></span></a>Change Log:</h2>
+<a id="change-log" class="anchor" href="#change-log" aria-hidden="true"><span class="octicon octicon-link"></span></a>Change Log:</h2>
 
 <p>0.0.2</p>
 
@@ -107,7 +106,7 @@
 </code></pre>
 
 <h2>
-<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
 <ol>
 <li>Fork it</li>
@@ -115,29 +114,29 @@
 <li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
 <li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
 <li>Create new Pull Request</li>
-</ol><h2>
-<a name="community" class="anchor" href="#community"><span class="octicon octicon-link"></span></a>Community</h2>
+</ol>
+
+<h2>
+<a id="community" class="anchor" href="#community" aria-hidden="true"><span class="octicon octicon-link"></span></a>Community</h2>
 
 <ul>
 <li><a href="https://rubygems.org/gems/cachewarp">CacheWarp on RubyGems</a></li>
 <li><a href="http://rubydoc.info/gems/cachewarp">CacheWarp on RubyDoc</a></li>
 </ul>
+
+<h2>
+<a id="build-status" class="anchor" href="#build-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build Status:</h2>
+
+<p><a href="https://gemnasium.com/juteroot/cachewarp"><img src="https://gemnasium.com/juteroot/cachewarp.png" alt="Dependency Status"></a>
+<a href="https://codeclimate.com/github/juteroot/cachewarp"><img src="https://codeclimate.com/github/juteroot/cachewarp.png" alt="Code Climate"></a></p>
+
+
       </section>
       <footer>
         <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		          <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-41788905-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
+		
   </body>
 </html>
